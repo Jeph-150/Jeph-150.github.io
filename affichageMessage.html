@@ -1,1 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Affichage de message par rapport a l'heure</title>
+  </head>
+  <body>
+    <!-- Affichage -->
+    <form>
+      <h1>Affichage de message par rapport a l'heure.</h1>
+      <h4>Quelle l'heure est t'il en utilisant le système horaire sur 24 heures ?</h4>
+      <!-- textbox -->
+      <label for="txtHeure">Heure:</label>
+      <input type="text" id="txtHeure"> <br>
+      <label for="txtMinute">Minutes:</label>
+      <input type="text" id="txtMinute"> <br>
+    </form>
+    <input type="button" id="btnMessage" onclick="affichageMessage()" value="Affiche mon message.">
+
+    <div id="divAffiche"></div>
+      <script>
+        function affichageMessage() {
+          var heure= parseInt(document.getElementById("txtHeure").value);
+          var minute= document.getElementById("txtMinute").value;
+          var affiche =document.getElementById("divAffiche");
+          var message;
+          var periode;
+          if ( heure >= 3 && heure <= 11) {
+          message = "Bon matin! "
+            } else {
+          if ( heure >= 12 && heure <= 16)
+          message = "Bonjour! "
+          }
+          if ( heure >= 17 && heure <= 20) {
+          message = "Bonne soirée! "
+            } else {
+          if ( heure >= 21 && heure <= 24)
+          message = "Bonne nuit! "
+          }
+          if ( heure >= 0 && heure <= 3) {
+          message = "Tu devrais être au lit!"
+          }
+          if ( heure >= 0 && heure <= 12) {
+          periode = " am."
+           } else {
+          periode = " pm."
+          }
+          affiche.innerHTML = message + "Il est " + heure + periode;
+          }
+      </script>
+  </body>
+</html>
 
