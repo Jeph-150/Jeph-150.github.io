@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Afficheur d'asterisque</title>
+    </head>
+    <body style="background-color :  pink;">
+      <!-- Affichage -->
+      <form>
+        <h1>Afficheur d'asterisque</h1>
+        <h4>Combien d'asterisque voulez-vous ?</h4>
+        <!-- textbox -->
+        <label for="txtAsterisque">Nombre d'asterisque:</label>
+        <input type="text" min=0 id="txtAsterisque"> <br>
+      </form>
+      <input type="button" id="btnAsterisque" onclick="affichageAsterique()" value="Affiche mes asterisques.">
+
+      <div id="divAffiche"></div>
+        <script>
+          function affichageAsterique () {
+            var nombre = parseInt(document.getElementById("txtAsterisque").value);
+            var affiche= document.getElementById("divAffiche");
+            var asterisque = "";
+            for( let i = 1; i<=nombre; i++ ){
+              asterisque = asterisque + "*"
+            }
+            affiche.innerHTML = asterisque;
+          }
+        </script>
+    </body>
+  </html>
+
+
