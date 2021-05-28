@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Les nombres consecutifs</title>
+    </head>
+    <body style="background-color :  burlyWood;">
+      <!-- Affichage -->
+      <form>
+        <h1>Les nombres consecutifs</h1>
+        <h4>Inserer vos nombres.</h4>
+        <!-- textbox -->
+        <label for="txtDepart">Nombre depart:</label>
+        <input type="text" id="txtDepart"> <br>
+
+        <label for="txtFinal">Nombre final:</label>
+        <input type="text" id="txtFinal"> <br>
+
+      </form>
+      <input type="button" id="btnResultat" onclick="affichageResultat()" value="Affiche mes nombres.">
+
+      <div id="divAffiche"></div>
+        <script>
+          function affichageResultat () {
+            var premierNombre = parseInt(document.getElementById("txtDepart").value);
+            var deuxiemeNombre = parseInt(document.getElementById("txtFinal").value);
+            var affiche= document.getElementById("divAffiche");
+            var display= "" + premierNombre;
+            for (let i = premierNombre+1; i<= deuxiemeNombre; i++) {
+            display = display + " - " + i
+            }
+            affiche.innerHTML = display;
+          }
+        </script>
+    </body>
+  </html>
